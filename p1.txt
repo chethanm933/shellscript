@@ -1,0 +1,89 @@
+a=2
+if ((a%2==0))
+ echo $a="even"
+else
+  echo $a="odd"
+fi
+
+a=80
+if ((a<100))
+then 
+ echo $a is "the number is two digit"
+ else
+ echo $a is "the number is multi digit"
+fi
+
+for i in 5 10 15 20 25 30
+do
+if ((i%2==0))
+ echo "the number is even"
+else echo "the number is odd"
+fi
+done
+
+sum=0
+for i in {1..1000}
+do
+if((i%100==0))
+then
+ let sum=sum+i
+fi
+done
+echo  $sum="the sum of even numbers"
+
+
+no=20
+
+for ((i=1;i<no+1;i++))
+do
+if ((no%2!=0))
+then
+if ((i%2!=0))
+then
+echo $i
+fi
+fi
+if ((no%2==0))
+then
+if ((i%2==0))
+then
+echo $i
+fi
+fi
+
+done
+
+
+
+a=2
+for ((i=1;i<=10;i++))
+do
+let a=a*i
+done
+
+a=10
+b=1
+while ((i<=a))
+do
+ let sum=b+i
+ let i++
+done
+echo $sum
+
+
+
+
+unction find()
+{
+        read -p"enter the number" num
+i=1
+res=1
+while ((i<=num))
+do
+let res=res*i
+let i++
+done
+echo $res
+}
+
+find

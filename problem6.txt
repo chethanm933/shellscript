@@ -1,0 +1,185 @@
+--------------for loop-------------------
+1.
+   	echo "enter a number: $1";
+   	a=2
+   	factor=0
+	for((i=1;i<=$1;i++))
+	do
+	let factor=$a**$i
+	echo $a^$i=$factor
+	done
+
+
+2.
+	echo "enter a number: $1";
+	a=1
+	hn=0
+	for((i=1;i<=$1;i++))
+	do
+	echo hn=$a/$i
+	done
+
+
+3.
+	read -p "enter a number" a
+	b=0
+	for((i=2;i<=a/2;i++))
+	do
+	if((a%i==0))
+	then
+	echo "the number is not a prime"
+	exit
+	fi
+	done
+	echo "the number is a prime"
+
+4.
+
+	read a
+	read b
+	num=0
+	num2=0
+	num3=0
+	for((i=a;i<=b;i++))
+	do
+	num=$i
+	for((n=2;n<=i/2;n++))
+	do
+	num2=$n
+	let num3=num%num2
+	if((num3==0))
+	then
+       	echo $num
+        break
+	fi
+        done
+	   	done
+
+5.
+	read a
+	fact=1
+	for ((i=2;i<=a;i++))
+	do
+	 fact=$i*$fact
+	let fac=fact
+	done
+	echo $fac
+
+6.
+	read a
+	for((i=2;i<=a;i++))
+	do
+	while((a%i==0))
+	do
+	echo $i
+	let a=a/i
+	done
+	done
+
+
+----------------while loop--------------------
+1.
+	read -p "enter a number: $1"
+	a=$1
+	echo $a
+	c=0
+	while((c<=256))
+	do
+	while((i=1;i<=a;i++))
+	do
+	c=2**i
+	echo $c
+	done
+	done
+
+2.
+
+money=100
+bet=0
+win=0
+lose=0
+i=4
+while((money!=200||money!=0))
+do
+((RANDOM))
+let c=RANDOM%i
+let bet=bet+1
+echo $bet "bet"
+if((c==0))
+then
+let win=win+1
+let money=money+1
+echo $win "win"
+echo $money "money"
+else
+let lose=lose+1
+let money=money-1
+echo $lose "lose"
+echo $money "money"
+ fi
+done
+
+
+--------------------function----------------
+
+1.
+
+read i
+case i in temp far
+temp)
+read degC
+if((degC>0&&degC<100))
+let degF=degC-9/5+32
+echo $degF
+fi
+;;
+far)
+read degF
+if((degF>32&&degF<212))
+let degC=degF-32*5/9
+echo $degC
+fi
+;;
+esac
+
+
+2.
+function fun()
+{
+read -p "enter a number" i
+if((i%11==0))
+then
+echo $i "the number is palindrome"
+else
+echo "the numbr is not a palindrome"
+fi
+}
+fun
+
+3.
+function fun()
+  {
+      read -p "enter a number" a
+      z=0
+         prime=0
+    for((i=2;i<=a/2;i++))
+       do
+     let z=i%a
+         if((z!=0))
+         then
+      let prime=z
+      fi
+echo "the number is a prime"
+  done
+   if((a%11==0))
+       then
+      echo $a "the number is palindrome"
+     else
+    echo "the numbr is not a palindrome"
+       fi
+if((prime!=0&&a%11==0))
+then
+echo $a "the number is prime and palindrome"
+fi
+}
+fun

@@ -1,0 +1,29 @@
+hello
+
+a=2
+if ((a%2==0))
+ echo $a="even"
+else
+  echo $a="odd"
+fi
+
+<other programing logic>
+for <variable_name> in <item_list>/<value_list>
+do
+	<action_block>
+done
+<other programming logic>
+
+for i in 1 2 3 4 5
+do
+	echo $i
+done
+
+
+for loop
+--------
+for <variable_name> in <item_list>/<value_list>
+do
+	<action_block>
+done
+
